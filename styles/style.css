@@ -3,6 +3,8 @@
 
 /* временные переменные */
 :root {
+
+  --bg-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --main-font: 'IBM Plex mono';
   --banner-heading-text-color: #DB00FF;
@@ -11,13 +13,17 @@
   --subheading-text-color: var(--bg-color);
   --subheading-bg-color: var(--accent-color);
   --main-text-color: #F1B2CE;
+  font-family: var(--main-font);
   font-size: 16px; /* вынести потом куда-нибудь еще, мб в глобал, мб в переменные потом посмотрим */
 }
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-color: var(--bg-color); /* мб вынести в переменную но это не точно */
-  font-family: var(--main-font);
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .header {
@@ -29,11 +35,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content 1fr;
   padding: 10px; /* для всей страницы, мб придется делать clamp(10px, x, 20px) */
-  background-image: url(../images/cover-image-dark.png); /* вынести в переменную */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 .decorated-zone {
@@ -46,7 +47,7 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border: 1px solid var(--accent-color); /* цвет в переменную */
+  border: 1px solid var(--accent-color);
 }
 
 .decorated-zone::after {
@@ -83,7 +84,6 @@
   box-shadow: 0px 0px 4px 2px #FF0070;
   right: -19px;
   bottom: 8px;
-
 }
 
 .header__theme-menu {
@@ -94,10 +94,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-
-.header__theme-menu-item {
-
 }
 
 .header__theme-menu-button {
@@ -125,8 +121,11 @@
 
 .header__description {
   font-size: 1.125rem;
-  color: var(--subheading-text-color);
-  background-color: var(--accent-color);
   font-weight: 700;
   line-height: 1.3em;
+}
+
+.title-decor {
+  color: var(--subheading-text-color);
+  background-color: var(--accent-color);
 }
