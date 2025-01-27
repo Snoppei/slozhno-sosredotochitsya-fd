@@ -1,7 +1,132 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
+/* временные переменные */
+:root {
+  --bg-color: #000028;
+  --main-font: 'IBM Plex mono';
+  --banner-heading-text-color: #DB00FF;
+  --accent-color: #FF0070;
+  --heading-text-color: var(--accent-color);
+  --subheading-text-color: var(--bg-color);
+  --subheading-bg-color: var(--accent-color);
+  --main-text-color: #F1B2CE;
+  font-size: 16px; /* вынести потом куда-нибудь еще, мб в глобал, мб в переменные потом посмотрим */
+}
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--bg-color); /* мб вынести в переменную но это не точно */
+  font-family: var(--main-font);
+}
 
-  /* много работы... */
+.header {
+  display: grid;
+  align-items: center;
+  inline-size: 100%;
+  block-size: 100vh; /* мб минимальный максимальный block-size */
+  min-block-size: 668px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: 10px; /* для всей страницы, мб придется делать clamp(10px, x, 20px) */
+  background-image: url(../images/cover-image-dark.png); /* вынести в переменную */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border: 1px solid var(--accent-color); /* цвет в переменную */
+}
+
+.decorated-zone::after {
+  border-left: none;
+  border-bottom: none;
+  right: 10px;
+  top: 10px;
+}
+
+.decorated-zone::before {
+  border-right: none;
+  border-top: none;
+  left: 10px;
+  bottom: 10px;
+}
+
+.header__decoration {
+  color: var(--accent-color);
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.5625rem;
+  position: absolute;
+  right: 38px;
+  top: 10px;
+}
+
+.header__decoration::after {
+  content: '';
+  position: absolute;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px #FF0070;
+  right: -19px;
+  bottom: 8px;
+
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+
+}
+
+.header__theme-menu-button {
+  min-inline-size: 70px;
+  min-block-size: 26px;
+  color: var(--accent-color);
+
+  font-size: 18px;
+  line-height: 1;
+
+  background-color: transparent;
+  border: none;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825em;
+  color: var(--banner-heading-text-color);
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+.header__description {
+  font-size: 1.125rem;
+  color: var(--subheading-text-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  line-height: 1.3em;
 }
