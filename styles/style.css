@@ -1,26 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-
-/* временные переменные */
-:root {
-
-  --bg-image: url(../images/cover-image-dark.png);
-  --bg-color: #000028;
-  --main-font: 'IBM Plex mono';
-  --banner-heading-text-color: #DB00FF;
-  --accent-color: #FF0070;
-  --hover-color: rgba(255, 0, 112, 0.4);
-  --heading-text-color: var(--accent-color);
-  --subheading-text-color: var(--bg-color);
-  --subheading-bg-color: var(--accent-color);
-  --main-text-color: #F1B2CE;
-  font-family: var(--main-font);
-  font-size: 16px; /* вынести потом куда-нибудь еще, мб в глобал, мб в переменные потом посмотрим */
-}
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--bg-image);
+  background-color: var(--bg-color);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -116,6 +99,7 @@
 
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus {
@@ -142,4 +126,89 @@
 .title-decor {
   color: var(--subheading-text-color);
   background-color: var(--accent-color);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  padding: 0 var(--padding-horizontal);
+  margin-top: 40px; /* поменяются при верстке более 768x1024 */
+  margin-bottom: 40px; /* поменяются при верстке более 768x1024 */
+}
+
+.content__section {
+  display: grid;
+  gap: 20px; /* не меняется */
+}
+
+.content__section_reasons {
+
+}
+
+.content__section_causes {
+
+}
+
+.content__section_advices {
+
+}
+
+.content__section-title {
+  font-size: 1.125rem;
+  line-height: 1.3em;
+  color: var(--accent-color);
+}
+
+.content__section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* не меняется */
+}
+
+.content__section-card-title {
+  font-size: 1.125rem;
+  line-height: 1.3em;
+}
+
+.content__section-card-description {
+  font-size: 1.125rem;
+  line-height: 1.3em;
+  color: var(--main-text-color);
+}
+
+.content__section-card-link {
+  text-shadow: 2px 1px var(--accent-color);
+  text-decoration: none;
+}
+
+.content__section-card-link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.content__section-card-link:focus {
+  outline: none;
+}
+
+.content__section-card-link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.content__section-card-subtitle {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.3em;
+}
+
+.content__section-image {
+  /* aspect-ratio: 1 / 1; */
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+
+.content__section_images {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, min-content);
+  gap: var(--padding-horizontal);
 }
