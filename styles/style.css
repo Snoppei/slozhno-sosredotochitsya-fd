@@ -212,3 +212,21 @@
   grid-template-rows: repeat(6, min-content);
   gap: var(--padding-horizontal);
 }
+
+.footer {
+  inline-size: 100%;
+  block-size: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825em;
+  color: var(--banner-heading-text-color);
+  text-shadow: 2px 2px var(--accent-color);
+  font-weight: 700;
+}
