@@ -9,6 +9,7 @@
   --main-font: 'IBM Plex mono';
   --banner-heading-text-color: #DB00FF;
   --accent-color: #FF0070;
+  --hover-color: rgba(255, 0, 112, 0.4);
   --heading-text-color: var(--accent-color);
   --subheading-text-color: var(--bg-color);
   --subheading-bg-color: var(--accent-color);
@@ -108,8 +109,21 @@
   border: none;
 }
 
+.header__theme-menu-button:not(:disabled):hover {
+  border: 1px solid var(--hover-color);
+}
+
+
 .header__theme-menu-button_active {
   border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .header__title {
