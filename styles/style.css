@@ -1,21 +1,21 @@
 .page {
-  background-image: var(--bg-image);
   background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 .header {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
   align-items: center;
+  padding: var(--padding-horizontal);
   inline-size: 100%;
   block-size: 100vh;
   min-block-size: 668px;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr min-content 1fr;
-  padding: var(--padding-horizontal);
 }
 
 .decorated-zone {
@@ -26,45 +26,45 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
+  border: 1px solid var(--accent-color);
   inline-size: 25px;
   block-size: 25px;
-  border: 1px solid var(--accent-color);
 }
 
 .decorated-zone::after {
-  border-left: none;
-  border-bottom: none;
-  right: var(--padding-horizontal);
   top: var(--padding-horizontal);
+  right: var(--padding-horizontal);
+  border-bottom: none;
+  border-left: none;
 }
 
 .decorated-zone::before {
-  border-right: none;
-  border-top: none;
-  left: var(--padding-horizontal);
   bottom: var(--padding-horizontal);
+  left: var(--padding-horizontal);
+  border-top: none;
+  border-right: none;
 }
 
 .header__decoration {
+  position: absolute;
+  top: var(--padding-horizontal);
+  right: calc(var(--padding-horizontal) + 28px);
   color: var(--accent-color);
   font-family: inherit;
   font-size: 1.125rem;
   line-height: 1.5625rem;
-  position: absolute;
-  right: calc(var(--padding-horizontal) + 28px);
-  top: var(--padding-horizontal);
 }
 
 .header__decoration::after {
   content: "";
   position: absolute;
-  inline-size: 9px;
-  block-size: 9px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
   right: -19px;
   bottom: 8px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
 }
 
 .header__theme-menu {
@@ -78,14 +78,14 @@
 }
 
 .header__theme-menu-button {
-  min-inline-size: 70px;
-  min-block-size: 26px;
+  border: none;
   color: var(--accent-color);
 
   font-size: 1.125rem;
   line-height: 1em;
   background-color: transparent;
-  border: none;
+  min-inline-size: 70px;
+  min-block-size: 26px;
 }
 
 .header__theme-menu-button:not(:disabled):hover {
@@ -106,15 +106,15 @@
 }
 
 .header__title {
+  color: var(--banner-heading-text-color);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825em;
-  color: var(--banner-heading-text-color);
   text-shadow: 4px 4px var(--accent-color);
 }
 
 .header__description {
-  font-size: 1.125rem;
   font-weight: 700;
+  font-size: 1.125rem;
   line-height: 1.3em;
 }
 
@@ -127,9 +127,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
-  padding: 0 var(--padding-horizontal);
   margin-top: 40px;
   margin-bottom: 40px;
+  padding: 0 var(--padding-horizontal);
 }
 
 .content__section {
@@ -138,9 +138,9 @@
 }
 
 .content__section-title {
+  color: var(--accent-color);
   font-size: 1.125rem;
   line-height: 1.3em;
-  color: var(--accent-color);
 }
 
 .content__section-container {
@@ -160,14 +160,14 @@
 }
 
 .content__section-card-description {
+  color: var(--main-text-color);
   font-size: 1.125rem;
   line-height: 1.3em;
-  color: var(--main-text-color);
 }
 
 .content__section-card-link {
-  text-shadow: 2px 1px var(--accent-color);
   text-decoration: none;
+  text-shadow: 2px 1px var(--accent-color);
 }
 
 .content__section-card-link:hover {
@@ -203,21 +203,21 @@
 }
 
 .footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   inline-size: 100%;
   block-size: 100vh;
   min-block-size: 668px;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
 }
 
 .footer__title {
+  color: var(--banner-heading-text-color);
+  font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825em;
-  color: var(--banner-heading-text-color);
   text-shadow: 2px 2px var(--accent-color);
-  font-weight: 700;
 }
 
 @media (width >= 768px) {
@@ -335,9 +335,9 @@
   }
 
   .header__theme-menu {
-    align-self: start;
-    justify-self: center;
     grid-column: 2 / 4;
+    justify-self: center;
+    align-self: start;
   }
 
   .header__theme-menu-list {
