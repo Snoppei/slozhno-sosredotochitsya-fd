@@ -22,14 +22,7 @@
   position: relative;
 }
 
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
-  border: 1px solid var(--accent-color);
-}
-
+.decorated-zone::before,
 .decorated-zone::after {
   content: "";
   position: absolute;
