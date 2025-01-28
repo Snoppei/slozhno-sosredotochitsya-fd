@@ -10,7 +10,7 @@
   --section-gap: 50px;
   --padding-horizontal: 10px;
   --main-font: "IBM Plex mono";
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-size: 16px;
 }
 
