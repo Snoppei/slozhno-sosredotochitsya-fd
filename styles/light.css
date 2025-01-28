@@ -14,14 +14,30 @@
   --banner-heading-text-color: #FFC2E6;
   --accent-color: #FF8DCB;
   --hover-color: rgba(50, 49, 45, 0.4);
-  --heading-text-color: var(--accent-color);
-  --subheading-text-color: var(--bg-color);
-  --subheading-bg-color: var(--accent-color);
   --main-text-color: #353430;
+  --subheading-text-color: var(--main-text-color);
+  --subheading-bg-color: var(--accent-color);
+  
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+.theme-light .header__decoration {
+  display: none;
+}
+
+.theme-light .decorated-zone::after, .decorated-zone::before {
+  --accent-color: #353430;
+}
+
+.theme-light .content__section-title {
+  --accent-color: #353430;
+}
+
+.theme-light .header__theme-menu {
+  --accent-color: #353430;
 }
 
 @media (prefers-color-scheme: light) {
@@ -31,9 +47,24 @@
     --banner-heading-text-color: #FFC2E6;
     --accent-color: #FF8DCB;
     --hover-color: rgba(50, 49, 45, 0.4);
-    --heading-text-color: var(--accent-color);
-    --subheading-text-color: var(--bg-color);
-    --subheading-bg-color: var(--accent-color);
     --main-text-color: #353430;
+    --subheading-text-color: var(--main-text-color);
+    --subheading-bg-color: var(--accent-color);
+  }
+
+  .header__decoration {
+    display: none;
+  }
+
+  .decorated-zone::after, .decorated-zone::before {
+    --accent-color: #353430;
+  }
+
+  .content__section-title {
+    --accent-color: #353430;
+  }
+
+  .header__theme-menu {
+    --accent-color: #353430;
   }
 }
