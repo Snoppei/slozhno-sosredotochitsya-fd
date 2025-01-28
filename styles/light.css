@@ -10,7 +10,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --bg-image: url(../images/cover-image-light.png);
-  --bg-color: #FFC2E6;
+  --bg-color: #FFF1F7;
   --banner-heading-text-color: #FFC2E6;
   --accent-color: #FF8DCB;
   --hover-color: rgba(50, 49, 45, 0.4);
@@ -20,30 +20,30 @@
   
 }
 
-.theme-light .page {
+:root.theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
-.theme-light .header__decoration {
+:root.theme-light .header__decoration {
   display: none;
 }
 
-.theme-light .decorated-zone::after, .decorated-zone::before {
+:root.theme-light .decorated-zone::after, .decorated-zone::before {
   --accent-color: #353430;
 }
 
-.theme-light .content__section-title {
+:root.theme-light .content__section-title {
   --accent-color: #353430;
 }
 
-.theme-light .header__theme-menu {
+:root.theme-light .header__theme-menu {
   --accent-color: #353430;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --bg-image: url(../images/cover-image-light.png);
-    --bg-color: #FFC2E6;
+    --bg-color: #FFF1F7;
     --banner-heading-text-color: #FFC2E6;
     --accent-color: #FF8DCB;
     --hover-color: rgba(50, 49, 45, 0.4);
