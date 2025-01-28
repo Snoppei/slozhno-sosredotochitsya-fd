@@ -8,9 +8,9 @@
   --banner-heading-text-color: #DB00FF;
   --accent-color: #FF0070;
   --hover-color: rgba(255, 0, 112, 0.4);
+  --main-text-color: #F1B2CE;
   --subheading-text-color: var(--bg-color);
   --subheading-bg-color: var(--accent-color);
-  --main-text-color: #F1B2CE;
 
 
   --section-gap: 50px;

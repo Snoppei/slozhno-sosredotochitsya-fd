@@ -24,7 +24,14 @@
   position: relative;
 }
 
-.decorated-zone::before,
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border: 1px solid var(--accent-color);
+}
+
 .decorated-zone::after {
   content: '';
   position: absolute;
@@ -84,8 +91,8 @@
   min-block-size: 26px;
   color: var(--accent-color);
 
-  font-size: 18px;
-  line-height: 1;
+  font-size: 1.125rem;
+  line-height: 1em;
   background-color: transparent;
   border: none;
 }
@@ -154,7 +161,7 @@
 .content__section-card {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* не меняется */
+  gap: 10px;
 }
 
 .content__section-card-title {
