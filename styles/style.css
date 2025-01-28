@@ -84,6 +84,7 @@
   font-size: 1.125rem;
   line-height: 1em;
   background-color: transparent;
+  cursor: pointer;
   min-inline-size: 70px;
   min-block-size: 26px;
 }
